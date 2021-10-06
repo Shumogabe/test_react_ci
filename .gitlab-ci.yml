@@ -6,12 +6,15 @@ test project:
   stage: test
   image: node:14
   script:
-    - npm test #run test
+    - npm test 
 build project:
   stage: build
   image: node:14
   script:
     - npm run build
+  artifacts:
+    paths:
+      - build/
 netlify:
   stage: deploy
   image: node:14
